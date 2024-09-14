@@ -10,25 +10,15 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Top bar -->
     <div class="top-bar text-center">
-        <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 1</button>
+        <button id="button1" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 1</button>
         <select class="topic-control"> Topic </select>
-        <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 2</button>
+        <button id="button2" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 2</button>
     </div>
-
-
 
     <!-- ECharts container -->
     <div id="chartContainer" class="chart-container"></div>
-
-    <!-- Bottom buttons -->
-    <!-- 
-    <div class="bottom-bar text-center">
-        <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 3</button>
-        <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 4</button>
-    </div> 
-    -->
-
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -40,5 +30,11 @@
     <script src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
     <!-- Custom JS -->
     <script type="module" src="./js/main.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
 </html>

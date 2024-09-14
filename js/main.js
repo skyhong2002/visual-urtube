@@ -21,22 +21,26 @@ if (!target_date) {
     target_date.setDate(target_date.getDate() - 1);
     target_date = target_date.toISOString().split('T')[0];
 }
-console.log('Target date: ' + target_date);
 
-if (localStorage.getItem(target_date) == null) {
-    console.log('data is not in local storage');
-    const data = await loadData(target_date);
-    const json_data = JSON.stringify(data);
-    localStorage.setItem(target_date, json_data);
-} else {
-    console.log('data is in local storage');
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const button1 = document.getElementById('button1');
+    const button2 = document.getElementById('button2');
+    if (button1) {
+        // set to the day before the date in the query parameter
+        button1.textContent = 'Previous Day';
+        const yesterday = new Date(target_date);
+        yesterday.setDate(yesterday.getDate() - 1);
+        button1.href = `index.html?date=${yesterday.toISOString().split('T')[0]}`;
+    }
+    if (button2) {
+        // set to the day after the date in the query parameter
+        button2.textContent = 'Next Day';
+        button2.href = `index.html?date=${target_date}`;
+    }
+});
 
-const daydata = localStorage.getItem(target_date);
-const json_data = JSON.parse(daydata);
+const json_data = await loadData(target_date);
 console.log(json_data.result);
-
-console.log(json_data.result.video);
 
 // create a list of video which have title, popularity, publishedTime, channelID and videoID
 // change publishedAt (2024-09-13 11:15:31) to 2018-09-13T11:15:31Z (always stick to Taiwan time)
