@@ -3,33 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- ECharts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.2/echarts.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Visual UrTube</title>
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div id="chart1" style="height: 400px;"></div>
-            </div>
-            <div class="col-md-6">
-                <div id="chart2" style="height: 400px;"></div>
-            </div>
-        </div>
+    <div class="top-bar text-center">
+        <button class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 1</button>
+        <select class="topic-control"> Topic </select>
+        <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 2</button>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
+
+
+    <!-- ECharts container -->
+    <div id="chartContainer" class="chart-container"></div>
+
+    <!-- Bottom buttons -->
+    <!-- 
+    <div class="bottom-bar text-center">
+        <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 3</button>
+        <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Button 4</button>
+    </div> 
+    -->
+
+
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Popper.js and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- ECharts -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>

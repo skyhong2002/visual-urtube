@@ -1,6 +1,37 @@
-body {
-    padding-top: 20px;
+/* Use the entire screen height and create a flex container */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
-#chart1, #chart2 {
-    margin-bottom: 20px;
+
+/* Styling for the top buttons */
+.top-buttons {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Styling for the chart container to take up the middle space */
+.chart-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+/* Set the size of the ECharts div */
+#chartContainer {
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for the bottom buttons */
+.bottom-buttons {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
 }
